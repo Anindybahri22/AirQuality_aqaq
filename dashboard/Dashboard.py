@@ -26,7 +26,7 @@ st.markdown(
 )
 with st.sidebar:
     # Menambahkan logo awan
-    st.image("awan3.png")
+    
     # Menambahkan Periode Tahun
     st.text('Rentang Waktu')
     date_observation = pd.to_datetime(st.date_input(
