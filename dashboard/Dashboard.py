@@ -5,7 +5,7 @@ import seaborn as sns
 import datetime 
 sns.set(style='dark')
 #Data Source
-airquality_df = pd.read_csv ('Dashboard/PRSA_Data_Gucheng_20130301-20170228.csv')
+airquality_df = pd.read_csv ('dashboard/PRSA_Data_Gucheng_20130301-20170228.csv')
 #Data Cleaning
 airquality_df=airquality_df.fillna(method='bfill').fillna(method='ffill')
 airquality_df['datetime'] = airquality_df['year'].astype(str) + '-' + airquality_df['month'].astype(str) + '-' + airquality_df['day'].astype(str) + ' ' + airquality_df['hour'].astype(str) + ':00:00'
