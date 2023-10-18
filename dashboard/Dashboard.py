@@ -14,7 +14,7 @@ airquality_df.insert(1,'datetime', column_to_move)
 airquality_df['datetime'] = pd.to_datetime(airquality_df['datetime'])
 drop_feature = ['No', 'year', 'month', 'day','hour', 'station']
 airquality_df.drop(drop_feature, axis=1, inplace=True)
-
+airquality_df.rename(columns={'PM2.5':'PM25'}, inplace=True)
 st.markdown(
     """
     # Air Quality Dashboard
@@ -48,8 +48,8 @@ col1, col2, col3, col4, col5, col6 = st.columns(6)
 #st.write(airquality_df)
 
 with col1:
-    st.header(airquality_daily['PM2.5'].mean().round(2))
-    st.write(f'(µg/m³) PM2.5')
+    st.header(airquality_daily['PM25'].mean().round(2))
+    st.write(f'(µg/m³) PM25')
 with col2:
     st.header(airquality_daily['PM10'].mean().round(2))
     st.write(f'(µg/m³) PM10')
@@ -71,7 +71,7 @@ with col3:
 #print(type(airquality_daily))    
 tab_pm25, tab_pm10, tab_so2, tab_no2, tab_co, tab_o3, tab_temp, tab_press, tab_dew, tab_rain = st.tabs(['PM2.5','PM10','SO2', 'NO2', 'CO', 'O3', 'Temperature','Preassure', 'Dew Point','Rain'])
 with tab_pm25:
-    st.line_chart(data=airquality_daily, x='datetime', y="PM2.5", use_container_width=True)
+    st.line_chart(data=airquality_daily, x='datetime', y="PM25", use_container_width=True)
 with tab_pm10:
     st.line_chart(data=airquality_daily, x='datetime', y="PM10", color='#ffaa0088', use_container_width=True)
 with tab_so2:
