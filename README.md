@@ -5,6 +5,6 @@ py -m pip install numpy pandas matplotlib streamlit seaborn
 ~~~
 ## Run streamlit app 
 ~~~bash
-py -m streamlit run master-dashboard.py
+py -m streamlit run Dashboard.py
 ~~~
 [Click here to access the streamlit app.](https://dashboardpy-tvefcueg9ktrrhpjvvhuyk.streamlit.app/)
